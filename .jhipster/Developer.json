@@ -1,0 +1,69 @@
+{
+    "name": "Developer",
+    "fields": [
+        {
+            "fieldName": "username",
+            "javadoc": "开发者姓名",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required",
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": 50
+        },
+        {
+            "fieldName": "password",
+            "javadoc": "密码",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required",
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": 30
+        },
+        {
+            "fieldName": "email",
+            "javadoc": "邮箱",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required",
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": 30
+        },
+        {
+            "fieldName": "type",
+            "javadoc": "开发者类型 1-个人 2-企业",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required",
+                "maxlength",
+                "pattern"
+            ],
+            "fieldValidateRulesMaxlength": 1,
+            "fieldValidateRulesPattern": "^(1|2)$"
+        },
+        {
+            "fieldName": "createTime",
+            "javadoc": "创建日期",
+            "fieldType": "LocalDate",
+            "fieldValidateRules": [
+                "required"
+            ]
+        }
+    ],
+    "relationships": [],
+    "changelogDate": "20181115062554",
+    "javadoc": "开发者对象",
+    "entityTableName": "t_developer",
+    "dto": "no",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "myapp",
+    "applications": [
+        "myapp"
+    ],
+    "microserviceName": "myapp"
+}
