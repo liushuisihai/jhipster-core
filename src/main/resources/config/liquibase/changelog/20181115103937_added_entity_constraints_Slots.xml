@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+    <!--
+        Added the constraints for entity Slots.
+    -->
+    <changeSet id="20181115103937-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="intent_id"
+                                 baseTableName="t_slots"
+                                 constraintName="fk_slots_intent_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="t_intent"/>
+
+        <addForeignKeyConstraint baseColumnNames="word_group_id"
+                                 baseTableName="t_slots"
+                                 constraintName="fk_slots_word_group_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="t_word_group"/>
+
+    </changeSet>
+</databaseChangeLog>

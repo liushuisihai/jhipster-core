@@ -1,0 +1,39 @@
+{
+    "name": "SkillCategory",
+    "fields": [
+        {
+            "fieldName": "name",
+            "javadoc": "技能种类名称",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required",
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": 20
+        },
+        {
+            "fieldName": "pid",
+            "javadoc": "技能类型的父节点id",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required",
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": 10
+        }
+    ],
+    "relationships": [],
+    "changelogDate": "20181115103936",
+    "javadoc": "技能种类",
+    "entityTableName": "t_skill_category",
+    "dto": "no",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "myapp",
+    "applications": [
+        "myapp"
+    ],
+    "microserviceName": "myapp"
+}
