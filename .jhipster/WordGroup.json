@@ -1,0 +1,29 @@
+{
+    "name": "WordGroup",
+    "fields": [
+        {
+            "fieldName": "content",
+            "javadoc": "词组内容",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required",
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": 20
+        }
+    ],
+    "relationships": [],
+    "changelogDate": "20181115084125",
+    "javadoc": "词组",
+    "entityTableName": "t_word_group",
+    "dto": "no",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "myapp",
+    "applications": [
+        "myapp"
+    ],
+    "microserviceName": "myapp"
+}
