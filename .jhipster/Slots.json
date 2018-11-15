@@ -1,0 +1,75 @@
+{
+    "name": "Slots",
+    "fields": [
+        {
+            "fieldName": "intentId",
+            "javadoc": "意图id",
+            "fieldType": "Long",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "sortNum",
+            "javadoc": "排序序号",
+            "fieldType": "Integer",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "isRequired",
+            "javadoc": "是否必填 1-必填 0-否",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required",
+                "maxlength",
+                "pattern"
+            ],
+            "fieldValidateRulesMaxlength": 1,
+            "fieldValidateRulesPattern": "^(0|1)$"
+        },
+        {
+            "fieldName": "question",
+            "javadoc": "追问内容",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": 50
+        },
+        {
+            "fieldName": "status",
+            "javadoc": "槽点状态 -1 删除 1 正常",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength",
+                "pattern"
+            ],
+            "fieldValidateRulesMaxlength": 1,
+            "fieldValidateRulesPattern": "^(-1|1)$"
+        },
+        {
+            "fieldName": "createTime",
+            "javadoc": "创建时间",
+            "fieldType": "LocalDate",
+            "fieldValidateRules": [
+                "required"
+            ]
+        }
+    ],
+    "relationships": [],
+    "changelogDate": "20181115070820",
+    "javadoc": "槽点对象",
+    "entityTableName": "t_slots",
+    "dto": "no",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "myapp",
+    "applications": [
+        "myapp"
+    ],
+    "microserviceName": "myapp"
+}
