@@ -1,12 +1,11 @@
 /** 开发者对象 */
-
 entity Developer(t_developer) {
 	id Long required /** 主键id */
     username String required maxlength(50) /** 开发者姓名 */
     password String required maxlength(30) /** 密码 */
     email String required maxlength(30) /** 邮箱 */
     type String  required maxlength(1) pattern(/^(1|2)$/) /** 开发者类型 1-个人 2-企业  */
-    createTime LocalDate required /** 创建日期 */
+    createTime ZonedDateTime required /** 创建日期 */
 }
 
 /** 词典对象 */
@@ -14,32 +13,81 @@ entity Dictionary(t_dictionary) {
 	id Long required /** 主键 */
     name String required maxlength(50) /** 词典名称 */
     type String required maxlength(1) pattern(/^(1|2)$/) /** 词典类型 1-系统 2-自定义 */
-    creater Long required /** 创建者 */
-    createTime LocalDate required /** 创建时间 */
+    //creater Long required /** 创建者 */
+    createTime ZonedDateTime required /** 创建时间 */
 }
 
 /** 意图对象  */
-entity Intent(intent) {
-	/**
-	 * 意图id
-	 */
-	intentId Long  required,
-	/**
-	 * 技能id
-	 */
-	skillId Long required,
-	/**
-	 * 意图描述
-	 */
-	content String required maxlength(50),
-	/**
-	 * 意图状态 1-正常 -1 已删除
-	 */
-	status String required pattern(/^(1|2)$/),
-	/**
-	 * 任务Id
-	 */
-	taskId Long required
+entity Intent(t_intent) {
+	id Long  required /** 意图id */
+	//skillId Long required /** 技能id */
+	content String required maxlength(50) /** 意图描述 */
+	delFlag Boolean required /** 意图状态 */
+	//taskId Long required /** 任务Id */
+    createTime ZonedDateTime required /** 创建时间 */
+}
+
+/** 技能类 */
+entity Skill(t_skill){
+	id Long required /** 技能id */
+	//developerId Long required /** 开发者Id */
+    //categoryId String required /** 技能类别id */
+    name String required /** 技能姓名 */
+    type String required maxlength(1) pattern(/^(1|2|3)$/) /** 技能类型 1-目的型 2-问答型 3-自定义 */
+    status String required maxlength(1) pattern(/^(1|2|3|-1)$/) /** 技能状态 1-开发中 2-审核中 3-已发布 -1已删除 */
+    callName String required maxlength(50) /** 技能打开名字 */
+    createTime ZonedDateTime required /** 创建时间 */
+}
+
+/** 技能种类 */
+entity SkillCategory(t_skillCategory){
+	id String required maxlength(10) /** 主键id 设计成有规则的字符型，方便查询 */
+    name String required maxlength(20) /** 技能种类名称 */
+    pid String required maxlength(10) /** 技能类型的父节点id */
+}
+
+/** 槽点对象 */
+entity Slots(t_slots){
+	id Long required /** 槽点id 主键 */
+    //intentId Long required /** 意图id */
+    sortNum Integer required /** 排序序号 */
+    isRequired String required maxlength(1) pattern(/^(0|1)$/) /** 是否必填 1-必填 0-否 */
+    question String maxlength(50) /** 追问内容 */
+    delFlag Boolean /** 槽点状态 */
+    createTime ZonedDateTime required /** 创建时间 */
+    //wordGroupId Long required /** 槽点词组的id */
+}
+
+/** 任务描述 */
+entity Task(t_task){
+	id Long required /** 任务id 主键 */
+    content String required maxlength(50) /** 任务描述 */
+    //skillId Long required /** 技能id */
+    delFlag Boolean required /** 技能状态 -1 删除 1 正常 */
+}
+
+/** App用户 */
+entity MyUser(t_user){	
+	id Long required /** 用户id，主键 */
+    username String required maxlength(20) /** 用户名 */
+    password String required maxlength(20) /** 用户密码 */
+    photo String required maxlength(50) /** 用户头像 */
+    token String maxlength(30) /** app交互token */
+}
+
+/** 用户说法 */
+entity UserStmt(t_userStmt){
+	id Long required /** 用户说法id，主键 */
+   // intentId Long required /** 用户说法所属的意图Id */
+    content String required /** 用户说法内容 */
+    delFlag Boolean required /** 用户说法状态 -1 删除 1 正常 */
+}
+
+/** 词组 */
+entity WordGroup(t_wordGroup){
+	id Long required /** 用户词组id */
+    content String required maxlength(20) /** 词组内容 */
+    //dictionaryId Long required /** 词典id */
 }
 
 application {
@@ -49,7 +97,23 @@ application {
     prodDatabaseType mysql
     buildTool gradle
   }
+  entities *
 }
+
+
+  
+relationship ManyToOne {
+  Skill{skillCategory} to SkillCategory
+  Skill{developer} to Developer
+  Intent{task} to Task
+  Task{skill} to Skill
+  UserStmt{intent} to Intent
+  Slots{intent} to Intent
+  Slots{dictionary} to Dictionary
+  Slots{wordGroup} to WordGroup
+}
+
+
 
 // Use Data Transfert Objects (DTO)
 // dto * with mapstruct
