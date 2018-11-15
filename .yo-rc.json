@@ -1,0 +1,36 @@
+{
+  "generator-jhipster": {
+    "databaseType": "sql",
+    "devDatabaseType": "h2Disk",
+    "enableHibernateCache": true,
+    "enableSwaggerCodegen": false,
+    "enableTranslation": true,
+    "jhiPrefix": "jhi",
+    "languages": [
+      "en",
+      "fr"
+    ],
+    "messageBroker": false,
+    "nativeLanguage": "en",
+    "packageName": "com.mycompany.myapp",
+    "packageFolder": "com/mycompany/myapp",
+    "prodDatabaseType": "mysql",
+    "searchEngine": false,
+    "serviceDiscoveryType": "eureka",
+    "skipClient": true,
+    "testFrameworks": [],
+    "websocket": false,
+    "baseName": "myapp",
+    "applicationType": "microservice",
+    "buildTool": "gradle",
+    "jhipsterVersion": "5.7.0",
+    "skipUserManagement": true,
+    "clientPackageManager": "npm",
+    "authenticationType": "jwt",
+    "cacheProvider": "hazelcast",
+    "serverPort": "8081",
+    "jwtSecretKey": "MjJiOTE5MjAxNWYwNzQ2YTIzMDE5NjNhYzIxZGFlY2E4Mjg5ZTQzMGE2M2M0OTJiZjcwODdhZGUwNzE5ZDMyY2NhOTU2YjMzNWMwMDRhNmJkOTUyZWYyZTY0OWFiOTJhYmIyM2MzNWM4MTgxZDliMzFmMDA4MDZmYTVjNTRjMWU=",
+    "otherModules": []
+  },
+  "entities": []
+}
