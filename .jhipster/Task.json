@@ -1,0 +1,49 @@
+{
+    "name": "Task",
+    "fields": [
+        {
+            "fieldName": "content",
+            "javadoc": "任务描述",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required",
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": 50
+        },
+        {
+            "fieldName": "skillId",
+            "javadoc": "技能id",
+            "fieldType": "Long",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "status",
+            "javadoc": "技能状态 -1 删除 1 正常",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required",
+                "maxlength",
+                "pattern"
+            ],
+            "fieldValidateRulesMaxlength": 1,
+            "fieldValidateRulesPattern": "^(-1|1)$"
+        }
+    ],
+    "relationships": [],
+    "changelogDate": "20181115070821",
+    "javadoc": "任务描述",
+    "entityTableName": "t_task",
+    "dto": "no",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "myapp",
+    "applications": [
+        "myapp"
+    ],
+    "microserviceName": "myapp"
+}
