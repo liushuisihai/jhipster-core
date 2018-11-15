@@ -1,0 +1,51 @@
+{
+    "name": "UserStmt",
+    "fields": [
+        {
+            "fieldName": "intentId",
+            "javadoc": "用户说法所属的意图Id",
+            "fieldType": "Long",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "content",
+            "javadoc": "用户说法内容",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "status",
+            "javadoc": "用户说法状态 -1 删除 1 正常",
+            "fieldType": "COMMONSTATUS",
+            "fieldValues": "NORMAL,DELETE",
+            "fieldValidateRules": [
+                "required"
+            ]
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "intent",
+            "otherEntityName": "intent",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20181115073939",
+    "javadoc": "用户说法",
+    "entityTableName": "t_user_stmt",
+    "dto": "no",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "myapp",
+    "applications": [
+        "myapp"
+    ],
+    "microserviceName": "myapp"
+}
