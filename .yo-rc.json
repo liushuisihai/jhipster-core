@@ -2,7 +2,7 @@
   "generator-jhipster": {
     "databaseType": "sql",
     "devDatabaseType": "h2Disk",
-    "enableHibernateCache": true,
+    "enableHibernateCache": false,
     "enableSwaggerCodegen": false,
     "enableTranslation": true,
     "jhiPrefix": "jhi",
@@ -12,8 +12,8 @@
     ],
     "messageBroker": false,
     "nativeLanguage": "en",
-    "packageName": "com.mycompany.myapp",
-    "packageFolder": "com/mycompany/myapp",
+    "packageName": "com.hshbic.skl.domain",
+    "packageFolder": "com/hshbic/skl/domain",
     "prodDatabaseType": "mysql",
     "searchEngine": false,
     "serviceDiscoveryType": "eureka",
@@ -22,7 +22,7 @@
     "websocket": false,
     "baseName": "myapp",
     "applicationType": "microservice",
-    "buildTool": "gradle",
+    "buildTool": "maven",
     "jhipsterVersion": "5.7.0",
     "skipUserManagement": true,
     "clientPackageManager": "npm",
@@ -32,5 +32,16 @@
     "jwtSecretKey": "MjJiOTE5MjAxNWYwNzQ2YTIzMDE5NjNhYzIxZGFlY2E4Mjg5ZTQzMGE2M2M0OTJiZjcwODdhZGUwNzE5ZDMyY2NhOTU2YjMzNWMwMDRhNmJkOTUyZWYyZTY0OWFiOTJhYmIyM2MzNWM4MTgxZDliMzFmMDA4MDZmYTVjNTRjMWU=",
     "otherModules": []
   },
-  "entities": []
+  "entities": [
+    "Developer",
+    "Dictionary",
+    "Intent",
+    "Skill",
+    "SkillCategory",
+    "Slots",
+    "Task",
+    "MyUser",
+    "UserStmt",
+    "WordGroup"
+  ]
 }

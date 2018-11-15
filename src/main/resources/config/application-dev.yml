@@ -17,7 +17,7 @@ logging:
     level:
         ROOT: DEBUG
         io.github.jhipster: DEBUG
-        com.mycompany.myapp: DEBUG
+        com.hshbic.skl.domain: DEBUG
 
 eureka:
     instance:
@@ -43,7 +43,7 @@ spring:
             indent-output: true
     datasource:
         type: com.zaxxer.hikari.HikariDataSource
-        url: jdbc:h2:file:./build/h2db/db/myapp;DB_CLOSE_DELAY=-1
+        url: jdbc:h2:file:./target/h2db/db/myapp;DB_CLOSE_DELAY=-1
         username: myapp
         password:
         hikari:
@@ -58,13 +58,9 @@ spring:
         properties:
             hibernate.id.new_generator_mappings: true
             hibernate.connection.provider_disables_autocommit: true
-            hibernate.cache.use_second_level_cache: true
+            hibernate.cache.use_second_level_cache: false
             hibernate.cache.use_query_cache: false
             hibernate.generate_statistics: true
-            hibernate.cache.region.factory_class: com.hazelcast.hibernate.HazelcastCacheRegionFactory
-            hibernate.cache.hazelcast.instance_name: myapp
-            hibernate.cache.use_minimal_puts: true
-            hibernate.cache.hazelcast.use_lite_member: true
     liquibase:
         contexts: dev
     mail:
