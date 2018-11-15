@@ -49,6 +49,7 @@ application {
     prodDatabaseType mysql
     buildTool gradle
   }
+  entities *
 }
 
 // Use Data Transfert Objects (DTO)
