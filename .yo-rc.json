@@ -32,5 +32,9 @@
     "jwtSecretKey": "MjJiOTE5MjAxNWYwNzQ2YTIzMDE5NjNhYzIxZGFlY2E4Mjg5ZTQzMGE2M2M0OTJiZjcwODdhZGUwNzE5ZDMyY2NhOTU2YjMzNWMwMDRhNmJkOTUyZWYyZTY0OWFiOTJhYmIyM2MzNWM4MTgxZDliMzFmMDA4MDZmYTVjNTRjMWU=",
     "otherModules": []
   },
-  "entities": []
+  "entities": [
+    "Developer",
+    "Dictionary",
+    "Intent"
+  ]
 }
