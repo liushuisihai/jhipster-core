@@ -1,0 +1,70 @@
+{
+    "name": "Skill",
+    "fields": [
+        {
+            "fieldName": "name",
+            "javadoc": "技能姓名",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "type",
+            "javadoc": "技能类型",
+            "fieldType": "SkillType",
+            "fieldValues": "DESTINATION,CUSTOM,QU_AND_ANS"
+        },
+        {
+            "fieldName": "status",
+            "javadoc": "技能状态",
+            "fieldType": "SkillStatus",
+            "fieldValues": "DEV,REVIEW,PUBLISH,DEL"
+        },
+        {
+            "fieldName": "callName",
+            "javadoc": "技能打开名字",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required",
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": 50
+        },
+        {
+            "fieldName": "createTime",
+            "javadoc": "创建时间",
+            "fieldType": "Instant",
+            "fieldValidateRules": [
+                "required"
+            ]
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "skillCategory",
+            "otherEntityName": "skillCategory",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "developer",
+            "otherEntityName": "developer",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20181116035055",
+    "javadoc": "技能类",
+    "entityTableName": "t_skill",
+    "dto": "no",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "myapp",
+    "applications": [
+        "myapp"
+    ],
+    "microserviceName": "myapp"
+}
