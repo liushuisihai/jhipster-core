@@ -1,0 +1,42 @@
+{
+    "name": "UserStmt",
+    "fields": [
+        {
+            "fieldName": "content",
+            "javadoc": "用户说法内容",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "delFlag",
+            "javadoc": "用户说法状态 -1 删除 1 正常",
+            "fieldType": "Boolean",
+            "fieldValidateRules": [
+                "required"
+            ]
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "intent",
+            "otherEntityName": "intent",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20181116021139",
+    "javadoc": "用户说法",
+    "entityTableName": "t_user_stmt",
+    "dto": "no",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "myapp",
+    "applications": [
+        "myapp"
+    ],
+    "microserviceName": "myapp"
+}
