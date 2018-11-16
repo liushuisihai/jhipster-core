@@ -5,6 +5,23 @@
     xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
 
     <include file="config/liquibase/changelog/00000000000000_initial_schema.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20181116032950_added_entity_Developer.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20181116032951_added_entity_Dictionary.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20181116032952_added_entity_Intent.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20181116032953_added_entity_Skill.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20181116032954_added_entity_SkillCategory.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20181116032955_added_entity_Slots.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20181116032956_added_entity_Task.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20181116032957_added_entity_MyUser.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20181116032958_added_entity_UserStmt.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20181116032959_added_entity_WordGroup.xml" relativeToChangelogFile="false"/>
     <!-- jhipster-needle-liquibase-add-changelog - JHipster will add liquibase changelogs here -->
+    <include file="config/liquibase/changelog/20181116032951_added_entity_constraints_Dictionary.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20181116032952_added_entity_constraints_Intent.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20181116032953_added_entity_constraints_Skill.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20181116032955_added_entity_constraints_Slots.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20181116032956_added_entity_constraints_Task.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20181116032958_added_entity_constraints_UserStmt.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20181116032959_added_entity_constraints_WordGroup.xml" relativeToChangelogFile="false"/>
     <!-- jhipster-needle-liquibase-add-constraints-changelog - JHipster will add liquibase constraints changelogs here -->
 </databaseChangeLog>
