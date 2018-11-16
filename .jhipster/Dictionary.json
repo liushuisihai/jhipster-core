@@ -1,0 +1,50 @@
+{
+    "name": "Dictionary",
+    "fields": [
+        {
+            "fieldName": "name",
+            "javadoc": "词典名称",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required",
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": 50
+        },
+        {
+            "fieldName": "type",
+            "javadoc": "词典类型",
+            "fieldType": "DictionaryType",
+            "fieldValues": "SYS,CUSTOM"
+        },
+        {
+            "fieldName": "createTime",
+            "javadoc": "创建时间",
+            "fieldType": "Instant",
+            "fieldValidateRules": [
+                "required"
+            ]
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "creater",
+            "otherEntityName": "developer",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20181116035053",
+    "javadoc": "词典对象",
+    "entityTableName": "t_dictionary",
+    "dto": "no",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "myapp",
+    "applications": [
+        "myapp"
+    ],
+    "microserviceName": "myapp"
+}

@@ -1,0 +1,67 @@
+{
+    "name": "Slots",
+    "fields": [
+        {
+            "fieldName": "sortNum",
+            "javadoc": "排序序号",
+            "fieldType": "Integer",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "isRequired",
+            "javadoc": "是否必填",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "question",
+            "javadoc": "追问内容",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": 50
+        },
+        {
+            "fieldName": "delFlag",
+            "javadoc": "槽点状态",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "createTime",
+            "javadoc": "创建时间",
+            "fieldType": "Instant",
+            "fieldValidateRules": [
+                "required"
+            ]
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "intent",
+            "otherEntityName": "intent",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "wordGroup",
+            "otherEntityName": "wordGroup",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20181116035057",
+    "javadoc": "槽点对象",
+    "entityTableName": "t_slots",
+    "dto": "no",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "myapp",
+    "applications": [
+        "myapp"
+    ],
+    "microserviceName": "myapp"
+}
