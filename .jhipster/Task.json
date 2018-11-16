@@ -1,0 +1,44 @@
+{
+    "name": "Task",
+    "fields": [
+        {
+            "fieldName": "content",
+            "javadoc": "任务描述",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required",
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": 50
+        },
+        {
+            "fieldName": "delFlag",
+            "javadoc": "技能状态 -1 删除 1 正常",
+            "fieldType": "Boolean",
+            "fieldValidateRules": [
+                "required"
+            ]
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "skill",
+            "otherEntityName": "skill",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20181116032956",
+    "javadoc": "任务描述",
+    "entityTableName": "t_task",
+    "dto": "no",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "myapp",
+    "applications": [
+        "myapp"
+    ],
+    "microserviceName": "myapp"
+}
