@@ -9,7 +9,7 @@ This application is configured for Service Discovery and Configuration with the 
 
 To start your application in the dev profile, simply run:
 
-    ./gradlew
+    ./mvnw
 
 
 For further instructions on how to develop with JHipster, have a look at [Using JHipster in development][].
@@ -20,11 +20,11 @@ For further instructions on how to develop with JHipster, have a look at [Using 
 
 To optimize the myapp application for production, run:
 
-    ./gradlew -Pprod clean bootWar
+    ./mvnw -Pprod clean package
 
 To ensure everything worked, run:
 
-    java -jar build/libs/*.war
+    java -jar target/*.war
 
 
 Refer to [Using JHipster in production][] for more details.
@@ -33,7 +33,7 @@ Refer to [Using JHipster in production][] for more details.
 
 To launch your application's tests, run:
 
-    ./gradlew test
+    ./mvnw clean test
 
 For more information, refer to the [Running tests page][].
 
@@ -48,7 +48,7 @@ docker-compose -f src/main/docker/sonar.yml up -d
 Then, run a Sonar analysis:
 
 ```
-./gradlew -Pprod clean test sonarqube
+./mvnw -Pprod clean test sonar:sonar
 ```
 
 For more information, refer to the [Code quality page][].
@@ -68,7 +68,7 @@ To stop it and remove the container, run:
 You can also fully dockerize your application and all the services that it depends on.
 To achieve this, first build a docker image of your app by running:
 
-    ./gradlew bootWar -Pprod jibDockerBuild
+    ./mvnw package -Pprod jib:dockerBuild
 
 Then run:
 
